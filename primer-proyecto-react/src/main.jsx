@@ -6,6 +6,8 @@ import { ContadorApp } from './ContadorApp'
 import { ContadorApp02 } from './ContadorApp02'
 import { ContadorApp03 } from './ContadorApp03'
 import { ListadoApp } from './ListadoApp'
+import { ContadorCambiaTitulo } from './components/mis-componentes/ContadorCambiaTitulo'
+import { UsersApp } from './UsersApp'
 import './styles.css'
 
 createRoot(document.getElementById('root')).render(
@@ -15,7 +17,9 @@ createRoot(document.getElementById('root')).render(
     {/* <ContadorApp /> */}
     {/* <ContadorApp02 /> */}
     {/* <ContadorApp03 value={0}/> */}
-    <ListadoApp />
+    {/* <ListadoApp /> */}
+    {/* <ContadorCambiaTitulo /> */}
+    < UsersApp />
 
   </StrictMode>,
 )
