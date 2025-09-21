@@ -16,16 +16,22 @@ export const UsersApp = () => {
     //     }
     // }
 
-    const [endPoint, setendPoint] = useState('')
+    const [endPoint, setEndPoint] = useState('users')
 
     // useEffect(() => {
     //     fetchUsers()
     // }, [])
 
+    const handleFetch = () => {
+        setEndPoint('comments')
+        console.log(endPoint)
+    }
+
     return (
         <>
             <h1>Lista de usuarios:</h1>
             <UserList endPoint={endPoint}/>
+            <button onClick={handleFetch}>Ir a comentarios</button>
 
             {/* <ul>
                 {users.map(user => <li key={user.id}>{user.name}</li>)}

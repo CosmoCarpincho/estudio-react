@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
 
-export const UserList = ({endpoint}) => {
-    const [users, setUsers] = useState([])
+export const UserList = ({endPoint}) => {
+    const [data, setUsers] = useState([])
     
     useEffect(() => {
         fetchUsers()
-    } ,[])
+    } ,[endPoint])
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/users')
+            const response = await fetch(`https://jsonplaceholder.typicode.com/${endPoint}`)
             const data = await response.json()
             setUsers(data)
+            console.log(data)
         }
         catch (error) {
             console.log(error)
@@ -20,7 +21,8 @@ export const UserList = ({endpoint}) => {
     return (
         <>
             <ul>
-                {users.map(user => <li key={user.id}>{user.name}</li>)}
+                {endPoint == 'users' ? data.map(item => <li key={item.id}>{item.name}</li>)
+                                    : data.map(item => <li key={item.id}>{item.body}</li>)}
             </ul>
         </>
     )
